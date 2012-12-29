@@ -11,8 +11,20 @@ With this tool one can parse the subtitles' file (*.srt) for a movie before watc
 
 ## Usage
 
-Python 2.7 is needed. We run the script with the target file path as an argument:
+Python 2.7 is needed. The most basic usage example would to run the script with the target file path as an argument:
+```
+python daemon.py subtitles-to-a-movie.srt
+```
+if everything works smoothly, we get the following message
+```
+Subtitles' file subtitles-to-a-movie.srt is parsed.
+The text body only is recorded into subtitles-to-a-movie.txt 
+Identified words and the usage statistics is recorded into subtitles-to-a-movie.words
+Recognized words are recorded into subtitles-to-a-movie.frequencies
+Flash card-style output for filtered words is in subtitles-to-a-movie.cards
+```
+
 
 ##License
 **Subtitles-to-cards** is released under the MIT licence. 
-The license does not cover the general language word usage statistics files (everything in ./corpus/) wich are taken from public sources. 
+The license does not cover the general language word usage statistics files (everything in ./corpus/) which are taken from public sources. 
