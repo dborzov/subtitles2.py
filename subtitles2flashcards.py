@@ -47,7 +47,7 @@ def IdentifyWords(word_frequencies, lower_limit,higher_limit):
 
 
 # finds an example of the word usage
-def Quote_For_A_Word(word):
+def Quote_For_A_Word(word,textbody):
     return 'Hi!'
 
 
@@ -75,7 +75,7 @@ if __name__=='__main__':
         words=WordsFromText(out)
         word_frequencies=CountWordFrequency(words)
         identified_words=IdentifyWords(word_frequencies,LOWER_LIMIT,HIGHER_LIMIT)
-        card_tuple=[word+(Quote_For_A_Word(word[0]),) for word in identified_words]
+        card_tuple=[word+(Quote_For_A_Word(word[0],sub_text),) for word in identified_words]
 
         out_file=open(file_name[:-3]+'txt',"w")
         out_file.writelines(out)
