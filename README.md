@@ -1,6 +1,6 @@
 ## Subtitles-to-cards
 
-**Subtitles-to-cards** parses subtitles' files (*.srt) for word usage statistics and compares it to the general word frequencies of a specific language (English only at the moment). It can then filter target words and make up a nice flash cards with various statistic parameters and context usage quotes.
+**Subtitles-to-cards** parses subtitles' files (*.srt) for word usage statistics and compares it to the general word frequencies of a specific language (English only at the moment). It can then filter target words and make up nice and printable flash cards with various statistic parameters and context usage quotes.
 
 The idea is to grow foreign language vocabulary by watching movies. 
 
