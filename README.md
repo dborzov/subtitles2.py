@@ -1,6 +1,6 @@
-## Subtitles-to-cards
+## Subtitles2cards
 
-**Subtitles-to-cards** parses subtitles' files (*.srt) for word usage statistics and compares it to the general word frequencies of a specific language (English only at the moment). It can then filter target words and make up nice and printable flash cards with various statistic parameters and context usage quotes.
+**Subtitles2cards** parses subtitles' files (*.srt) for word usage statistics and compares it to the general word frequencies of a specific language (English only at the moment). It can then filter target words and make up nice and printable flash cards with various statistic parameters and context usage quotes.
 
 The idea is to grow foreign language vocabulary by watching movies. 
 
@@ -26,5 +26,5 @@ Flash card-style output for filtered words is in subtitles-to-a-movie.cards
 
 
 ##License
-**Subtitles-to-cards** is released under the MIT licence. 
+**Subtitles2cards** is released under the MIT licence. 
 The license does not cover the general language word usage statistics files (everything in ./corpus/) which are taken from public sources. 
