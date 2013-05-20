@@ -15,6 +15,7 @@ eggs
 env
 parts
 var
+app/lib
 develop-eggs
 .installed.cfg
 
