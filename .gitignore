@@ -16,6 +16,7 @@ env
 parts
 var
 app/lib
+app/application/secret_keys.py
 develop-eggs
 .installed.cfg
 

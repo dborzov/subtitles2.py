@@ -3,7 +3,7 @@ settings.py
 
 Configuration for Flask app
 
-Important: Place your keys in the secret_keys.py module, 
+Important: Place your keys in the secret_keys.py module,
            which should be kept out of version control.
 
 """
@@ -13,7 +13,7 @@ import os
 from secret_keys import CSRF_SECRET_KEY, SESSION_KEY
 
 
-DEBUG_MODE = False
+DEBUG_MODE = True
 
 # Auto-set debug mode based on App Engine dev environ
 if 'SERVER_SOFTWARE' in os.environ and os.environ['SERVER_SOFTWARE'].startswith('Dev'):

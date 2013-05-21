@@ -3,20 +3,23 @@ $(document).ready(function(){
 
   dima_reacts = function(){
         var thecommand = $("#dima-query").val();
-        window.theresponse = 'No response from server :('
 
-        $.post('./query', thecommand,function(data) {
-            console.log(data);
-            window.theresponse = data;
-            var view = {
-             flaky_in: thecommand,
-             flaky_out: window.theresponse
-            };
+        $.ajax({
+            url:'./api/query',
+            data:'{"query":"'+thecommand+'"}',
+            type:'POST',
+            headers: {"Content-type": "application/json"},
+            success:function(data) {
+                console.log('Received response: '+data);
+                window.theresponse = data;
+                var view = {
+                    flaky_in: thecommand,
+                    flaky_out: window.theresponse
+                };
 
-
-            dima_paste = Mustache.render('<div class="row-fluid"><div class="span2">&nbsp;</div><div class="span8 flaky-query"><p class="lead text-center"> {{flaky_in}} </div><div class="span2">&nbsp;</div></div><div class="row-fluid"><div class="span2">&nbsp;</div><div class="span8 flaky-response"><p class="lead text-center"> {{flaky_out}} </div><div class="span2">&nbsp;</div></div>', view);
-
-            $("#dimasscreen").prepend(dima_paste);
+                dima_paste = Mustache.render('<div class="row-fluid"><div class="span2">&nbsp;</div><div class="span8 flaky-query"><p class="lead text-center"> {{flaky_in}} </div><div class="span2">&nbsp;</div></div><div class="row-fluid"><div class="span2">&nbsp;</div><div class="span8 flaky-response"><p class="lead text-center"> {{flaky_out}} </div><div class="span2">&nbsp;</div></div>', view);
+                $("#dimasscreen").prepend(dima_paste);
+                }
         });
 
     }
@@ -27,7 +30,6 @@ $(document).ready(function(){
     if(e.which == 13) {
         event.preventDefault();
         dima_reacts();
-        $("#dima-query").val("");
     }
 });
 
