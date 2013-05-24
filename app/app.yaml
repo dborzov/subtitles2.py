@@ -11,6 +11,7 @@ builtins:
 - admin_redirect: on
 - deferred: on
 - remote_api: on
+- datastore_admin: on
 
 libraries:
 - name: jinja2

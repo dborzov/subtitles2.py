@@ -34,3 +34,11 @@ pip-log.txt
 *.[oa]
 *.py[co]
 *.rbc
+
+# subtitle files
+sub
+
+# word corpus
+corpus
+
+

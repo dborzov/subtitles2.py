@@ -5,12 +5,14 @@ Runs in the AppEngineConsole locally.
 SOURCE_PATH = "c:\Python27\find_this_fucker\corpus.txt"
 
 from google.appengine.ext import ndb
+import models
 
 
 class DictionaryWord(ndb.Model):
     """Example Model"""
     word = ndb.StringProperty(required=True)
     frequency = ndb.IntegerProperty(required=True)
+
 
 word_corpus=open(SOURCE_PATH,"rb").readlines()
 

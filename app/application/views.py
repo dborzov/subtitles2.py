@@ -9,6 +9,8 @@ from flask_cache import Cache
 from application import app
 from decorators import login_required, admin_required
 from models import DictionaryWord
+import tramway.texter as srt
+import re
 
 
 # Flask-Cache (configured to use App Engine Memcache API)
@@ -23,7 +25,7 @@ def say_hello():
     if dict_match:
         return dict_match[0].word + ' ,freq:' + str(dict_match[0].frequency)
     else:
-        return 'not a word, bitch'
+        return ", ".join(srt.words_from_string(query['query']))
 
 
 
