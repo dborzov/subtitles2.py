@@ -8,12 +8,13 @@ class DictionaryWord(ndb.Model):
 
 
 class Quote(ndb.Model):
-    text = ndb.StringProperty(required=True)
+    line = ndb.StringProperty(required=True)
+    context = ndb.StringProperty(required=True)
     movie = ndb.StringProperty(required=True)
     youtube = ndb.StringProperty()
 
 
 class Mention(ndb.Model):
-    quote = ndb.Key(required=True)
-    word = ndb.Key(required=True)
+    quote = ndb.KeyProperty(kind=Quote)
+    word = ndb.KeyProperty(kind=DictionaryWord)
 

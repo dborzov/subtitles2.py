@@ -2,10 +2,9 @@
 Runs in the AppEngineConsole locally.
 """
 
-SOURCE_PATH = "c:\Python27\find_this_fucker\corpus.txt"
+SOURCE_PATH = # gotta set it up
 
 from google.appengine.ext import ndb
-import models
 
 
 class DictionaryWord(ndb.Model):

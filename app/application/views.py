@@ -9,7 +9,6 @@ from flask_cache import Cache
 from application import app
 from decorators import login_required, admin_required
 from models import DictionaryWord
-import tramway.texter as srt
 import re
 
 
@@ -25,7 +24,7 @@ def say_hello():
     if dict_match:
         return dict_match[0].word + ' ,freq:' + str(dict_match[0].frequency)
     else:
-        return ", ".join(srt.words_from_string(query['query']))
+        return ", ".join([query['query']])
 
 
 
