@@ -4,9 +4,9 @@
 }
 
 .flaky-query {
-  padding: 1px;
-  margin-bottom: 1px;
-  background-color: #D8C0A6;
+  padding: 5px;
+  margin-bottom: 7px;
+  background-color: #B9AFAE;
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
           border-radius: 10px;
@@ -15,8 +15,22 @@
 .flaky-response {
   padding: 10px;
   margin-bottom: 20px;
-  background-color: #FED0D0;
+  background-color: #E5E6DE;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
+}
+
+
+.flaky-movie {
+  padding: 5px;
+  margin-bottom: 7px;
+  background-color: #DE661A;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.movietitle {
+    color: #E5E6DE;
 }
