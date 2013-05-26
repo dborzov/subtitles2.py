@@ -46,3 +46,18 @@ def flush():
     return 'The deed is done, all mentions are deleted'
 
 
+def right_name():
+    """deletes all the mention records in database."""
+    all_lines = Quote.query().fetch()
+    for quote in all_lines:
+        quote.movie = 'Monty Python and the Holy Grail'
+        quote.put()
+    return 'The deed is done!'
+
+def rectify():
+    """deletes all the mention records in database."""
+    all_lines = Quote.query().fetch()
+    for quote in all_lines:
+        quote.context.replace('\n', ' \n<br>')
+        quote.put()
+    return 'The rectifying is done!'
