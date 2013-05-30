@@ -37,6 +37,7 @@ pip-log.txt
 
 # subtitle files
 sub
+app/application/srt
 
 # word corpus
 corpus
