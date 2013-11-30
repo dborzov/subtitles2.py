@@ -35,11 +35,5 @@ pip-log.txt
 *.py[co]
 *.rbc
 
-# subtitle files
-sub
-app/application/srt
-
-# word corpus
-corpus
 
 
