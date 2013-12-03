@@ -1,28 +1,33 @@
 ## Welcome to Subtitles2.py!
 
-**Subtitles2.py** is a python library that makes a search index for the movie and tv show quotes by parsing the `.srt` format files.
-
-Under the hood it creates a combination of a [Suffix Array](http://en.wikipedia.org/wiki/Suffix_array) and an Inverted index to enable the log-time string matching lookups.
+**Subtitles2.py** is a python library that makes a search index for the movie and tv show quotes by parsing the `.srt` format files. Under the hood it works by creating a combination of a [Suffix Array](http://en.wikipedia.org/wiki/Suffix_array) and an Inverted index to enable the log-time string matching lookups.
 
 It is very much work in progress at the moment, so please thread gently.
 
 ### Example
-Let us start with building ourselves a google for Monty Python and the Holy Grail quotes.
-
-We download the repository:
+Let us start with building ourselves a google for Monty Python and the Holy Grail quotes. We need to download the repository:
 ```
 git clone https://github.com/dborzov/subtitles2.py
 cd subtitles2.py
 ```
-and run the `examples_grail.py` file:
-```
-import subtitles2
+going along with the `examples_grail.py` file:
 
-search_engine = subtitles2.Engine('srt/Monty\ Python\ and\ the\ Holy\ Grail.srt')
-print search_engine.query('Ni')
+```python
+import subtitles2 #from the subtitles2 folder
+
+src_path = 'srt/Monty\ Python\ and\ the\ Holy\ Grail.srt' #path to the .srt file
+search_engine = subtitles2.Engine(src_path) #parsing the file and creating the index
 ```
 
-That is it, we are all set! Feel free to play with queries in some interpreter and explore its feautures.
+Now that we created the index, we can do various stuff with it:
+```python
+print search_engine.query('Ni') # searching for all the string occurences
+
+src_path = 'srt/The Meaning\ Of\ Life.srt'
+search_engine.parse(src_path) # adding more content to the index
+```
+
+That is the basic functionality. Feel free to play with queries or check out more examples exploring various features in the `./examples` folder.
 
 ## Directory
 Here are the folders contents:
