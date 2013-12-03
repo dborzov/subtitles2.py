@@ -5,7 +5,7 @@
 It is very much work in progress at the moment, so please thread gently.
 
 ### Example
-Let us start with building ourselves a google for Monty Python and the Holy Grail quotes. We need to download the repository:
+Let us start with building ourselves a google for **Monty Python and the Holy Grail** quotes. We need to download the repository:
 ```
 git clone https://github.com/dborzov/subtitles2.py
 cd subtitles2.py
@@ -32,12 +32,12 @@ That is the basic functionality. Feel free to play with queries or check out mor
 ## Directory
 Here are the folders contents:
 
-* `./corpus` contains an sqlite database with the English word vocabulary and usage frequencies for Levenshtein distance 1 typo-corrections;
-* `./docs` library's documentation;
+* `./corpus/` contains an sqlite database with the English word vocabulary and usage frequencies for Levenshtein distance 1 typo-corrections;
+* `./docs/` library's documentation;
 * `./examples` example scripts showcasting various library's features; a good place to start exploring
-* `./srt`, contains example `.srt` that are protected by their owners copyright and should not be used by anybody. Only here for convenience, I will eventually delete this folder.
-* `./subtitles2`, the Python library itself, copy to `$PYTHONPATH/Lib/site-packages/` to use from anywhere in your system.
-* `./test` contains library's testing units.
+* `./srt/`, contains example `.srt` that are protected by their owners copyright and should not be used by anybody. Only here for convenience, I will eventually delete this folder.
+* `./subtitles2/`, the Python library itself, copy to `$PYTHONPATH/Lib/site-packages/` to use from anywhere in your system.
+* `test-subtitles2` library's testing units.
 
 ##License
 **Subtitles2** is released under the MIT licence.  Contents of `./srt` belong to its owners and should not be downloaded by anybody.

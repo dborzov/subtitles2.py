@@ -35,3 +35,6 @@ pip-log.txt
 *.py[co]
 *.rbc
 
+[No ipython notebooks or temp.py for random stuff]
+*.ipynb
+temp.py

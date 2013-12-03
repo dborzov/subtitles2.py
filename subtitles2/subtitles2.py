@@ -21,9 +21,6 @@ def IdentifyWords(word_frequencies, lower_limit,higher_limit):
     return identified_array
 
 
-# finds an example of the word usage
-def Quote_For_A_Word(word,textbody):
-    return 'Hi!'
 
 
 def RenderFile(file_name):
