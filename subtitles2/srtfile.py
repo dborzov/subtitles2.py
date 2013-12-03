@@ -35,14 +35,27 @@ class SrtFile:
 class SrtIterator:
     def __init__(self,iterator):
         self.iterator = iterator
+        self.StopIterator = False
 
     def __iter__(self):
         return self
 
     def next(self):
         self.status = 'line number'
+        if self.StopIterator:
+            """ Last time we reached the end of source, time to stop iteration"""
+            raise StopIteration
+
+        dialog = '' # preassign only for when zero readings before reaching end of source
+        time_start = datetime.timedelta(0)# that is, the source is really not an .srt
+        time_end = datetime.time(0)# that is, the source is really not an .srt
+
         while True:
-            line = self.iterator.next()
+            try:
+                line = self.iterator.next()
+            except:
+                self.StopIterator = True
+                break
             if self.status == 'line number':
                 match = re.search('\d+',line)
                 if match:
@@ -53,9 +66,10 @@ class SrtIterator:
                 if match:
                     # We stumbled upon timespan line, get ready to read dialogue itself
                     hour, minute, sec, microsec = match.group(1,2,3,4)
-                    time_start = datetime.time(int(hour), int(minute),int(sec), int(microsec))
+                    time_start = datetime.timedelta(0, int(sec), 0, int(microsec),  int(minute), int(hour))
                     hour, minute, sec, microsec = match.group(5,6,7,8)
-                    time_end = datetime.time(int(hour), int(minute),int(sec), int(microsec))
+                    time_end = datetime.timedelta(0, int(sec), 0, int(microsec), int(minute), int(hour))
+                    self.TimeSpan = time_end # keeps track of the overall film's timespan
                     self.status = 'dialog lines'
                     dialog = ''
                     continue
@@ -66,4 +80,5 @@ class SrtIterator:
                 else:
                     # we stumbled upon an empty string, means end of dialog lines
                     break
+
         return time_start, time_end, dialog
