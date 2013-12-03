@@ -1,41 +1,38 @@
-## Subtitles2flashcards
+## Welcome to Subtitles2.py!
 
-**Subtitles2flashcards** parses subtitles' files (*.srt) for word usage statistics and compares it to the general word frequencies of a specific language (English only at the moment). It can then filter target words and make up nice and printable flash cards with various statistic parameters and context usage quotes.
+**Subtitles2.py** is a python library that makes a search index for the movie and tv show quotes by parsing the `.srt` format files.
 
-The idea is to grow foreign language vocabulary by watching movies. 
+Under the hood it creates a combination of a [Suffix Array](http://en.wikipedia.org/wiki/Suffix_array) and an Inverted index to enable the log-time string matching lookups.
 
-With this tool one can parse the subtitles' file (*.srt) for a movie before watching and thus
-* identify the unknown words 
-* sort them in order of general language usage frequency (to learn basic words first and rarely used ones later)
-* create printable flashcards with such goodies as context quotes and statistics.
+It is very much work in progress at the moment, so please thread gently.
 
-## Most common usage example
+### Example
+Let us start with building ourselves a google for Monty Python and the Holy Grail quotes.
 
-Python 2.7 is needed. The most basic usage example would to run the script with the target file path as an argument:
+We download the repository:
 ```
-python daemon.py CharlieBrownChristmas.srt
+git clone https://github.com/dborzov/subtitles2.py
+cd subtitles2.py
 ```
-if everything works smoothly, we get the following message
+and run the `examples_grail.py` file:
 ```
-Subtitles' file CharlieBrownChristmas.srt is parsed.
-Flash card-style output for filtered words is in CharlieBrownChristmas.cards
-```
+import subtitles2
 
-## Finetuning the output
-Parsing parameters can be passed as arguments to tailor the output. We can try verbose mode:
-```
-python daemon.py CharlieBrownChristmas.srt verbose
+search_engine = subtitles2.Engine('srt/Monty\ Python\ and\ the\ Holy\ Grail.srt')
+print search_engine.query('Ni')
 ```
 
-Succesfull output should yield:
+That is it, we are all set! Feel free to play with queries in some interpreter and explore its feautures.
 
-```
-The text body only is recorded into CharlieBrownChristmas.txt 
-Identified words and the usage statistics is recorded into CharlieBrownChristmas.words
-Recognized words are recorded into subtitles-to-a-movie.frequencies
-Flash card-style output for filtered words is in CharlieBrownChristmas.cards
-```
+## Directory
+Here are the folders contents:
+
+* `./corpus` contains an sqlite database with the English word vocabulary and usage frequencies for Levenshtein distance 1 typo-corrections;
+* `./docs` library's documentation;
+* `./examples` example scripts showcasting various library's features; a good place to start exploring
+* `./srt`, contains example `.srt` that are protected by their owners copyright and should not be used by anybody. Only here for convenience, I will eventually delete this folder.
+* `./subtitles2`, the Python library itself, copy to `$PYTHONPATH/Lib/site-packages/` to use from anywhere in your system.
+* `./test` contains library's testing units.
 
 ##License
-**Subtitles2cards** is released under the MIT licence. 
-The license does not cover the general language word usage statistics files (everything in ./corpus/) which are taken from public sources. 
+**Subtitles2** is released under the MIT licence.  Contents of `./srt` belong to its owners and should not be downloaded by anybody.
