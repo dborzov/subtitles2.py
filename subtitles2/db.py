@@ -15,6 +15,9 @@ def add_chunk(movie, start_sec, dialogue):
     conn.commit()
     conn.close()
 
+def read_chunks():
+    pass
+
 
 
 

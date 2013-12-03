@@ -6,7 +6,7 @@ import re
 import datetime
 
 
-class SrtFile:
+class SrtFile(object):
     def __init__(self,iterator):
         self.iterator = iterator
         self.status = 'line number'
@@ -32,7 +32,7 @@ class SrtFile:
         return line, line_status
 
 
-class SrtIterator:
+class SrtIterator(object):
     def __init__(self,iterator):
         self.iterator = iterator
         self.StopIterator = False

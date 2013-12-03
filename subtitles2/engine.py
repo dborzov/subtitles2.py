@@ -3,12 +3,13 @@ import db
 import datetime
 
 
-class Engine:
+class Engine(object):
     def __init__(self,src_path,src_title):
         self.title = src_title
         src_file = open(src_path,'rb')
         src = srtfile.SrtIterator(src_file)
         self.chunk_start_time = 0
+        time_end = datetime.timedelta(0)
         while True:
             try:
                 old_end = time_end
@@ -26,7 +27,8 @@ class Engine:
                 break
 
     def dump_chunk(self):
-        db.add_chunk(self.title, int(self.chunk_start_time), self.chunk_dialogue)
+        db.add_chunk(self.title, int(self.chunk_start_time),
+            self.chunk_dialogue)
 
 
 

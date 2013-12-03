@@ -2,7 +2,7 @@
 
 **Subtitles2.py** is a python library that makes a search index for the movie and tv show quotes by parsing the `.srt` format files. Under the hood it works by creating a combination of a [Suffix Array](http://en.wikipedia.org/wiki/Suffix_array) and an Inverted index to enable the log-time string matching lookups.
 
-It is very much work in progress at the moment, so please thread gently.
+It is very much work in progress at the moment, so please tread gently.
 
 ### Example
 Let us start with building ourselves a google for **Monty Python and the Holy Grail** quotes. We need to download the repository:
