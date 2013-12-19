@@ -15,7 +15,7 @@ going along with the `examples_grail.py` file:
 ```python
 import subtitles2 #from the subtitles2 folder
 
-src_path = 'srt/Monty\ Python\ and\ the\ Holy\ Grail.srt' #path to the .srt file
+src_path = 'srt/Monty Python and the Holy Grail.srt' #path to the .srt file
 search_engine = subtitles2.Engine(src_path) #parsing the file and creating the index
 ```
 
@@ -23,7 +23,7 @@ Now that we created the index, we can do various stuff with it:
 ```python
 print search_engine.query('Ni') # searching for all the string occurences
 
-src_path = 'srt/The Meaning\ Of\ Life.srt'
+src_path = 'srt/The Meaning Of Life.srt'
 search_engine.parse(src_path) # adding more content to the index
 ```
 
