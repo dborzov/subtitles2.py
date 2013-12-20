@@ -40,4 +40,4 @@ Here are the folders contents:
 * `test-subtitles2` library's testing units.
 
 ##License
-**Subtitles2** is released under the MIT licence.  Contents of `./srt` belong to its owners and should not be downloaded by anybody.
+**Subtitles2** is released under the MIT licence.  Contents of `./srt` belong to its owners and should not be downloaded by anyone.

@@ -7,6 +7,9 @@ import datetime
 
 
 class SrtFile(object):
+    """
+    Iterates through st file line by line
+    """
     def __init__(self,iterator):
         self.iterator = iterator
         self.status = 'line number'
@@ -33,6 +36,9 @@ class SrtFile(object):
 
 
 class SrtIterator(object):
+    """
+    Iterates through each entry in the srt file
+    """
     def __init__(self,iterator):
         self.iterator = iterator
         self.StopIterator = False

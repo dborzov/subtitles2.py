@@ -16,12 +16,14 @@ class Engine(object):
                 time_start, time_end, text = src.next()
                 dialogue_pause = time_start - old_end
                 if dialogue_pause.total_seconds()<30.:
+                    # since pause to the next line is short treat as one quote
                     self.chunk_dialogue += text
                     continue
-                #quite a pause, must be new movie scene, treat as a separate dialogue chunk
+                #otherwise, seems like quite a pause
+                #must be new movie scene, treat as a separate dialogue chunk
+                self.dump_chunk()
                 self.chunk_dialogue = text
                 self.chunk_start_time = time_start.total_seconds()
-                self.dump_chunk()
             except:
                 self.dump_chunk()
                 break
