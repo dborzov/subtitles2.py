@@ -8,8 +8,11 @@ class Engine(object):
         self.title = src_title
         src_file = open(src_path,'rb')
         src = srtfile.SrtIterator(src_file)
+        # define values for the first loop
         self.chunk_start_time = 0
         time_end = datetime.timedelta(0)
+        self.chunk_dialogue = ''
+        # primary iteration loop
         while True:
             try:
                 old_end = time_end
